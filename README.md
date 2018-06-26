@@ -7,6 +7,7 @@
 ## Code References
 1) Modal reference: https://www.w3schools.com/howto/howto_css_modals.asp
 2) 2D Collision Detection: https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+3) Joe Dahle https://github.com/JoeDahle/FEND-Arcade-Clone
 
 ## Arcade Game Demo
 https://afendrich.github.io/Project-3---Arcade-Game/
