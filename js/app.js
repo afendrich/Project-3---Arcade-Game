@@ -2,18 +2,14 @@
 const Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
     this.speed = speed;
-
 //    this.velocity = Math.random() * 250 * velocity;
-
 };
-
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -34,8 +30,6 @@ Enemy.prototype.update = function(dt) {
       showModal();
     }
 };
-
-
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -50,11 +44,9 @@ const Player = function Player() {
 }
 Player.prototype.update = function() {
 }
-
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.img), this.x, this.y);
 }
-
 Player.prototype.handleInput = function(move) {
   if(move === 'left' && this.x > 0) {
     this.x -= 101;
@@ -71,24 +63,15 @@ Player.prototype.handleInput = function(move) {
 //console.log to see the position of the Player
 console.log("Player x: ", this.x, "Player y:", this.y)
 }
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
 let enemy1 = new Enemy(-100, 63, 400);
 let enemy2 = new Enemy(-100, 146, 300);
 let enemy3 = new Enemy(-100, 229, 200);
 let enemy4 = new Enemy(-100, 312, 100);
-
-
-
 let allEnemies = [enemy1, enemy2, enemy3, enemy4];
-//let allEnemies = [enemy4];
 let player = new Player('');
-
-
-
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
@@ -98,7 +81,6 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
 //winner Modal
@@ -110,6 +92,7 @@ function showModal() {
     //open the modal
     modal.style.display = "block";
     // When the user clicks on <span> (x), close the modal
+    //this is not working yet, need to update funcationality for closing modal
     span.onclick = function() {
        modal.style.display = "none";
        // When the user clicks anywhere outside of the modal, close it
